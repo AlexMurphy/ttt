@@ -18,7 +18,7 @@ import { CookieCustomizationTest } from './workflows/cookie-customization.workfl
 // 1. First parameter: string - the test name/description
 // 2. Second parameter: async function - the actual test logic
 
-test('customise which cookies are selected', async ({ page }, testInfo) => {
+test('do not enable any optional cookies and save preferences', async ({ page }, testInfo) => {
   // ===== FUNCTION PARAMETERS EXPLANATION =====
   // This is TypeScript's "destructuring assignment" syntax
   // { page } - extracts the 'page' property from the first parameter object

@@ -13,6 +13,16 @@ export class BrowserUtils {
     }
   }
 
+  static async handleDesktopSpecificFilterUI(page: Page, platform: string | undefined): Promise<void> {
+    if (platform === 'desktop') {
+      try {
+        await page.locator('#italy').click({ timeout: 3000 });
+      } catch (error) {
+        console.log('Desktop-specific elements not found or already handled, continuing...');
+      }
+    }
+  }
+
   static async handleBrowserSpecificWaits(page: Page, projectName: string): Promise<void> {
     if (projectName === 'Microsoft Edge') {
       console.log('Microsoft Edge detected - adding extra wait time for tracking cookies...');
